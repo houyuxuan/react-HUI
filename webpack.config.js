@@ -1,9 +1,11 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
-    mode: 'production',
     entry: {
         index: './lib/index.tsx'
+    },
+    resolve: {
+        extensions: ['.js', '.vue', '.json', '.ts', '.tsx']
     },
     output: {
         path: path.resolve(__dirname, 'dist/lib'),
@@ -18,10 +20,4 @@ module.exports = {
             }
         ]
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            title: 'hou',
-            template: 'index.html'
-        })
-    ]
 }
